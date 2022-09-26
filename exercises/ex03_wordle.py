@@ -49,7 +49,7 @@ def input_guess(n: int) -> str:
     """It will request the user for an estimate and keep prompting them until they submit a guess of the expected length if given an integer "expected length" of a guess as a parameter."""
     attempt: str = input("Enter a " + str(n) + " character word: ")
     while len(attempt) != n:
-        attempt = input(f"That was not {n} letters! Try again: ")
+        attempt = input(f"That wasn't {n} chars! Try again: ")
     return attempt
 
 
