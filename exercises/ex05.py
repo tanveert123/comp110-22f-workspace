@@ -19,7 +19,11 @@ def only_evens(num_list: list[int]) -> str:
 
 def concat(list1: list[int], list2: list[int]) -> str:
     """Returns an int list that is made by adding the values of the second list immediately to the first list"""
-    print(list1 + list2)
+    i: int = 0
+    while i < len(list2):
+        list1.append(list2[i])
+        i+=1
+    print(list1)
 
 
 def sub(num_list: list[int], start: int, end: int) -> int:
