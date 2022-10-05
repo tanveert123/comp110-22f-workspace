@@ -1,11 +1,16 @@
-num_list = [1, 2, 3]
+point: 0
 
-even_list: str = []
-i: int = 0
+def main() -> None: 
+    greet()
+    baby()
 
-while i < len(num_list):
-    if num_list[i] % 2 == 0:
-        even_list.append(num_list[i])
-    i += 1
-    
-print(even_list)
+def greet() -> str:
+    global point
+    point += 1
+
+def baby() -> str:
+    global point 
+    print(point)
+
+if __name__ == "__main__":
+  main()
