@@ -1,4 +1,4 @@
-"""Demostrating of dictionries capabilities."""
+"""Demostrating of dictionaries capabilities."""
 
 
 #Declaring the type of dictionary

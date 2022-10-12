@@ -7,7 +7,7 @@ __author__ = "730578741"
 import random
 
 
-point = 0
+points: int = 0
 player: str
 user_decision: str
 THUMBS_UP: str = "\U0001F44D"
@@ -21,6 +21,7 @@ def main() -> None:
     greet()
     decision()
     game_loop()
+
 
 def greet() -> None:
     """This is the greet function. Its main purpose is to greet the user as they begin to play the game."""
@@ -63,19 +64,20 @@ def play() -> None:
 
     if auto_generated == h_or_t:
         print(f"Congrats! You guessed correctly! {THUMBS_UP}{CHECK}")
-        increase_score(point)
+        increase_score(points)
     else:
         print(F"Wrong! You guessed incorrectly! {THUMBS_DOWN}{X_MARK}")
 
 
-def increase_score(num: int) -> int:
+def increase_score(num: int) -> None:
     """This is the increase_score function. Its main purpose is to increase the 'point' variable for the score of the game."""
-    global point
-    point += 1
+    global points
+    points += 1
 
 
 def game_loop() -> None:
     """This is the game_loop function. Its main purpose is to make the game continue to run until the user doesn't want to play."""
+    global user_decision
     while user_decision != "End":
         check_score()
         decision()
@@ -83,9 +85,9 @@ def game_loop() -> None:
 
 def check_score() -> None:
     """This is the check_score function. This runs when the user wannt to check his/her score."""
-    global point
-    print(f"Your score is: {point}")
+    global points
+    print(f"Your score is: {points}")
 
 
 if __name__ == "__main__":
-  main()
+    main()
