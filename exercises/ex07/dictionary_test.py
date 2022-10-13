@@ -13,34 +13,34 @@ def test_invert_empty() -> None:
     assert invert(a) == {}
 
 
-def test_invert_words_and_nums() -> None:
+def test_invert_words_and_nums1() -> None:
     """First use case testing for inverting of dictionary 'a'. Should return '{'z': 'a', 'y': 'b', 'x': 'c'}'."""
-    a: dict[str, str] = {'a': 'z', 'b' : 'y', 'c': 'x'}
+    a: dict[str, str] = {'a': 'z', 'b': 'y', 'c': 'x'}
     assert invert(a) == {'z': 'a', 'y': 'b', 'x': 'c'}
 
 
-# def test_invert_key_error() -> None:
-#     """Second use case testing for KeyError. Should return 'KeyError("This function cannot handle having 2 words that are the same! Please use different word!")'."""
-#     a: dict[str, str] = {'a': 'z', 'b' : 'y', 'c': 'x'}
-#     assert invert(a) == {'z': 'a', 'y': 'b', 'x': 'c'}
+def test_invert_words_and_nums2() -> None:
+    """First use case testing for inverting of dictionary 'a'. Should return '{'cat': 'apple'}'."""
+    a: dict[str, str] = {'apple': 'cat'}
+    assert invert(a) == {'cat': 'apple'}
 
 
-# def test_favorite_color_empty() -> None:
-#     """Edge case testing for empty n_and_f. Should return '[]'."""
-#     n_and_f: dict[str, str] = {}
-#     assert favorite_color(n_and_f) == {}
+def test_favorite_color_empty() -> None:
+    """Edge case testing for empty n_and_f. Should return ' "" '."""
+    n_and_f: dict[str, str] = {}
+    assert favorite_color(n_and_f) == ""
 
 
-# def test_favorite_color_normal1() -> None:
-#     """First use case testing for function called favorite_color. Should return 'blue'."""
-#     a: dict[str, str] = {"Marc": "yellow", "Ezri": "blue", "Kris": "blue"}
-#     assert favorite_color(a) == "blue"
+def test_favorite_color_normal1() -> None:
+    """First use case testing for function called favorite_color. Should return 'green'."""
+    a: dict[str, str] = {"Marc": "green", "Ezri": "green", "Kris": "blue"}
+    assert favorite_color(a) == "green"
 
 
-# # def test_favorite_color_tie() -> None:
-# #     """Second use case testing for function called favorite_color. Should return 'yellow'."""
-# #     a: dict[str, str] = {"Marc": "yellow", "Ezri": "red", "Kris": "blue"}
-# #     assert favorite_color(a) == "yellow"
+def test_favorite_color_normal2() -> None:
+    """Second use case testing for function called favorite_color. Should return 'red'."""
+    a: dict[str, str] = {"Marc": "red", "Ezri": "red", "Kris": "blue"}
+    assert favorite_color(a) == "red"
 
 
 def test_count_empty() -> None:
