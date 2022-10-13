@@ -20,21 +20,30 @@ def invert(a: dict[str, str]) -> dict[str, str]:
 def favorite_color(n_and_f: dict[str, str]) -> str:
     """Given a dictionary of [str, str] of names and favorite colors, favorite_color should return a string which is the color that appears most frequently."""
     new_dict = {}
-    high: int = 0
-    color = ""
-    color_list: list[str] = list()
 
     for i in n_and_f:
-        color_list.append(n_and_f[i])
-    for j in color_list:
-        if j not in new_dict:
-            new_dict[j] = 1
+        if n_and_f[i] not in new_dict:
+            new_dict[n_and_f[i]] = 1
         else:
-            new_dict[j] += 1
-        if new_dict[j] > high:
-            high = new_dict[i]
+            new_dict[n_and_f[i]] += 1
+    
+    high: int = 0
+    second_high: int = 0
+    color: str = ""
+
+    for j in new_dict:
+        num = new_dict[j]
+        if num > high:
+            second_high = high
+            high = num
             color = j
-    return color
+        if second_high == high:
+            for k in new_dict:
+                if new_dict[k] == high:
+                    color = k
+            return color
+        else:
+            return color
     
 
 def count(str_list: list[str]) -> dict[str, int]:
